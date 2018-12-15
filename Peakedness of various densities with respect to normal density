@@ -1,0 +1,13 @@
+rm(list=ls())
+eq1 = function(x){(1/(3*sqrt(pi)))*(9/4+x^4)*exp(-x^2)}
+eq2 = function(x){(3/(2*sqrt(2*pi)))*exp(-0.5*x^2)-(1/(6*sqrt(pi)))*(9/4+x^4)*exp(-x^2)}
+eq3 = function(x){(1/(6*sqrt(pi)))*(exp(-0.25*x^2)+4*exp(-x^2))}
+eq4 = function(x){(3*sqrt(3)/(16*sqrt(pi)))*(2+x^2)*exp(-0.75*x^2)}
+eq5 = function(x){(1/sqrt(2*pi))*exp(-0.5*x^2)}
+curve(eq1,from=-4,to=4,type="l",ylim=c(0,0.5),lty=1,main="Peakedness of various densities with respect to normal density",ylab="Density")
+curve(eq2,from=-4,to=4,type="l",add=TRUE,lty=2,col="orange")
+curve(eq3,from=-4,to=4,type="l",add=TRUE,lty=3,col="blue")
+curve(eq4,from=-4,to=4,type="l",add=TRUE,lty=4,col="cyan")
+curve(eq5,from=-4,to=4,type="l",add=TRUE,col="red")
+abline(v=0)
+legend(x="topright",title="Densities",legend=c("Normal density","Density 1","Density 2","Density 3","Density 4"),col=c("red","black","orange","blue","cyan"),lty=c(1,1,2,3,4))

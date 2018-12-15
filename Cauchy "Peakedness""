@@ -1,0 +1,17 @@
+rm(list=ls())
+n=1000
+set.seed(12344)
+data=rcauchy(n)
+hist(data,freq=F,xlab="x",ylab="Frequency",breaks=100)
+mean=mean(data)
+sd=sd(data)*sqrt((n-1)/n)
+abline(v=mean+sd,lty=2)
+abline(v=mean-sd,lty=2)
+k=sum(((data-mean)/sd)^4)/n
+k
+data1=data[abs(data-mean)<sd]
+data2=data[abs(data-mean)>=sd]
+k1=sum(((data1-mean)/sd)^4)/n
+k2=sum(((data2-mean)/sd)^4)/n
+k1
+k2
